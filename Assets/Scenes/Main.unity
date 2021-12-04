@@ -653,15 +653,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platforms:
   - {fileID: 2440991045669962102, guid: c2fcfe1be08ef394c861a1c567e570d5, type: 3}
-  - {fileID: 2440991045669962102, guid: c2fcfe1be08ef394c861a1c567e570d5, type: 3}
-  - {fileID: 8529710409918469200, guid: 3a0def46d1bd1b9478cfb351bcd39827, type: 3}
   - {fileID: 8529710409918469200, guid: 3a0def46d1bd1b9478cfb351bcd39827, type: 3}
   - {fileID: 2650838522789214644, guid: 1185c269374af97488e28c62078508cd, type: 3}
-  - {fileID: 4396171207349690897, guid: 0b6f9063ba18e8b4d863d4c8d0075566, type: 3}
   - {fileID: 4396171207349690897, guid: 0b6f9063ba18e8b4d863d4c8d0075566, type: 3}
   - {fileID: 3386485235464820444, guid: 8d045c0123d5d804b81ffe6e718057f9, type: 3}
-  - {fileID: 2440991045669962102, guid: c2fcfe1be08ef394c861a1c567e570d5, type: 3}
-  - {fileID: 2650838522789214644, guid: 1185c269374af97488e28c62078508cd, type: 3}
   spawnTime: 2.5
 --- !u!61 &409717824
 BoxCollider2D:

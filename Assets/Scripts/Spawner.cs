@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour
     private float countTime;
     private Vector3 spawnPosition;
 
-    
+
     void Update()
     {
         SpawnPlatform();
@@ -19,9 +19,9 @@ public class Spawner : MonoBehaviour
     {
         countTime += Time.deltaTime;
         spawnPosition = transform.position;
-        spawnPosition.x = Random.Range(-2.2f,2.2f);
+        spawnPosition.x = Random.Range(-2.2f, 2.2f);
 
-        if ( countTime >= spawnTime )
+        if (countTime >= spawnTime)
         {
             CreatePlatform();
             countTime = 0;
@@ -31,20 +31,38 @@ public class Spawner : MonoBehaviour
 
     public void CreatePlatform()
     {
-        int index = Random.Range(0,platforms.Count);
-        int spikeNum =0;
-        if(index == 4)
+        float[] rateArray = new float[] { 0.4f, 0.25f, 0.25f, 0.1f, 0.1f };
+
+        float rand = Random.Range(0, 100) / 100.0f;
+
+        int index = 0;
+
+        for (var i = 0; i < platforms.Count; i++)
         {
-        spikeNum++;
-        }
-        if(spikeNum > 1)
-        {
-            spikeNum = 0;
-            countTime = spawnTime;
-            return;
+            if (rand - rateArray[i] < 1e-2)
+            {
+                index = i;
+                break;
+            }
+
+            rand -= rateArray[i];
         }
 
-       GameObject newPlatform = Instantiate(platforms[index],spawnPosition,Quaternion.identity);
-       newPlatform.transform.SetParent(this.gameObject.transform);
+        //int spikeNum =0;
+        //if(index == 4)
+        //{
+        //    spikeNum++;
+        //}
+
+        //if(spikeNum > 1)
+        //{
+        //    spikeNum = 0;
+        //    countTime = spawnTime;
+        //    return;
+        //}
+
+
+        GameObject newPlatform = Instantiate(platforms[index], spawnPosition, Quaternion.identity);
+        newPlatform.transform.SetParent(this.gameObject.transform);
     }
 }
